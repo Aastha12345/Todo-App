@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <style>
+        body{
+            background: #944e6c;
+            font-family: tahoma;
+            color: white;
+        }
+
+        #todo-table{
+            position: relative;
+            width: 95%;
+            background: #433d3c;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #todo-table form:after{
+            margin: 0;
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        input[type="text"]{
+            width: 70%;
+            padding: 20px;
+            border: 0;
+            background: whitesmoke;
+            float: left;
+            font-size: 20px;
+            color: #23282e;
+        }
+
+        button{
+            padding: 20px;
+            width: 20%;
+            display : inline;
+            background: #23282e;
+            border: 0;
+            box-sizing: border-box;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            width: 70%;
+            padding: 20px;
+            float: left;
+            font-family: arial;
+            font-size: 20px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id = "todo-table">    
+        <form action="/todo/add" method="POST">
+            <input type="text" name="item"  placeholder="Add item..." required>
+            <button> Add Item </button>
+        </form>
+        <hr>
+        
+        <ul>
+            <% todos.forEach(todo=>{ %>
+               
+                <li id="<%= todo._id %>"><%= todo.item %></li>
+
+                <form action="/todo/delete/<%= todo._id %>" method="POST" id="<%= todo._id %>">
+                    <button>Remove</button>
+                </form>
+
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
