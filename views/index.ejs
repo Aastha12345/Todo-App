@@ -13,6 +13,10 @@
             color: white;
         }
 
+        h1{
+            color: #23282e;
+        }
+
         #todo-table{
             position: relative;
             width: 95%;
@@ -41,6 +45,7 @@
 
         button{
             padding: 20px;
+            margin : 1px;
             width: 20%;
             display : inline;
             background: #23282e;
@@ -67,11 +72,13 @@
             letter-spacing: 1px;
         }
 
-
     </style>
 
 </head>
 <body>
+    <div style = "text-align: center;">
+        <h1>TO - DO</h1>
+    </div>
     <div id = "todo-table">    
         <form action="/todo/add" method="POST">
             <input type="text" name="item"  placeholder="Add item..." required>
@@ -87,6 +94,8 @@
                 <form action="/todo/delete/<%= todo._id %>" method="POST" id="<%= todo._id %>">
                     <button>Remove</button>
                 </form>
+
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
             <% }) %>
         </ul>
