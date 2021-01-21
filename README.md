@@ -52,6 +52,6 @@ MongoDB is being used as database.
  npm start
 ```
 
-* Now head over to http://localhost:1500/todo/add to see it working.
+* Now head over to http://localhost:3000/todo/add to see it working.
 
 <br>
