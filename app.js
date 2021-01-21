@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({
 
 //-------------Connect to database---------------------
 var db = require('./db.js');
-var port = process.env.PORT || 3000;
 mongoose.connect(db.database, { useNewUrlParser: true });
 
 
@@ -34,7 +33,7 @@ app.use('/todo',additem);
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
 app.listen(port);
 
