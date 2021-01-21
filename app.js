@@ -32,9 +32,11 @@ const additem=require('./routes/additem');
 
 app.use('/todo',additem);
 
-app.listen('1500', () => {
-  console.log('Server now listening at localhost 1500');
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 
 module.exports = app;
