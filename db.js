@@ -1,4 +1,4 @@
 module.exports={
-    database:'mongodb://localhost:27017/todo',
+    database:'mongodb+srv://riya:riya21799A$@todo.snizu.mongodb.net/todo',
     useNewUrlParser:true
 };
